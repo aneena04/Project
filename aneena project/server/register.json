@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "name": "Aneena",
+      "email": "",
+      "phone number": "",
+      "password": "",
+      "cpassword": "",
+      "id": 1
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone number": "",
+      "password": "",
+      "cpassword": "",
+      "id": 2
+    },
+    {
+      "name": "Priya",
+      "email": "priya@gmail.com",
+      "phone number": "",
+      "password": "qqq",
+      "cpassword": "",
+      "id": 3
+    },
+    {
+      "name": "tom",
+      "email": "tom@gmail.com",
+      "phone number": "",
+      "password": "1111",
+      "cpassword": "1111",
+      "id": 4
+    },
+    {
+      "name": "rinu",
+      "email": "rinu@gmail.com",
+      "phone number": "",
+      "password": "2222",
+      "cpassword": "2222",
+      "id": 5
+    },
+    {
+      "name": "Malu",
+      "email": "malu@gmail.com",
+      "phone number": "",
+      "password": "333",
+      "cpassword": "333",
+      "id": 6
+    }
+  ]
+}
