@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { CompanyService } from '../company.service';
+import { Router } from '@angular/router';
+import { Company } from '../model/company';
+
+@Component({
+  selector: 'app-companies',
+  templateUrl: './companies.component.html',
+  styleUrls: ['./companies.component.css']
+})
+export class CompaniesComponent implements OnInit {
+  companies: Company[];
+  constructor(private companyService: CompanyService, private router: Router) { }
+
+  ngOnInit() {
+
+    this.companyService.getAllCompany().subscribe(data => {
+      this.companies = data;
+    });
+
+
+  }
+}

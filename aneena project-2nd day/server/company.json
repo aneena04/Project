@@ -1,0 +1,26 @@
+{"companies":[
+    
+  {
+      "id":1,
+      "company": "XYZ",
+      "office": "Chennai",
+      "turnover": 10000000.00,
+      "ceo": "Aneena"
+  },
+  {
+      "id":2,
+      "company": "ABC",
+      "office": "Chennai",
+      "turnover": 3000000.00,
+      "ceo": "Hameem"
+  },
+  {
+      "id":3,
+      "company": "PQR",
+      "office": "Chennai",
+      "turnover": 5000000.00,
+      "ceo": "Malavika"
+  }
+  ]
+    
+}
