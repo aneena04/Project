@@ -1,0 +1,21 @@
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>Company Name</th>
+        <th>Office</th>
+        <th>Turnover</th>
+        <th>Ceo</th>
+    </tr>
+    <tr *ngFor="let company of companies">
+        <td>{{company.id}}</td>
+        <td>{{company.company}}</td>
+        <td>{{company.office}}</td>
+        <td>{{company.turnover}}</td>   
+        <td>{{company.ceo}}</td>   
+
+        <td><button class="btn btn-danger" (click)="deleteCompany(company)">Delete</button></td>
+        <!-- <td><button class="btn btn-primary" (click)="updateUser(user)">Update</button></td>    -->
+
+    </tr>
+
+</table>
