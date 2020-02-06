@@ -1,0 +1,59 @@
+<form [formGroup]="updateUser">
+    <h2 class="text-center"> Update Company</h2>
+    <div class="form-group">
+      <input type="number" 
+      formControlName="id"
+       placeholder=" Id " 
+       name="id" 
+       class="form-control"
+        id="Id" >
+       
+    </div>
+    <div class="form-group">
+      <input type="text"
+       formControlName="name" 
+       placeholder="Company name" 
+       name="name" 
+       class="form-control" 
+       id="name" >
+    
+    </div>
+     <div class="form-group">
+      <input type="text"
+       formControlName="office"
+        placeholder="Head office" 
+        name="office" 
+        class="form-control"
+         id="office">
+     
+    </div>
+     <div class="form-group">
+      <input type="number" 
+      formControlName="turnover"
+       placeholder="turnover"
+        name="turnover"
+         class="form-control" 
+         id="turnover">
+      
+    </div>
+    <div class="form-group">
+        <input type="text"
+         formControlName="ceo" 
+         placeholder="CEO" 
+         name="ceo" 
+         class="form-control" 
+         id="ceo" >
+      
+      </div>
+      <div class="form-group">
+        <input type="text"
+         formControlName="directors" 
+         placeholder="Board of Directors" 
+         name="directors" 
+         class="form-control" 
+         id="directors" >
+      
+      </div>
+   
+    <button class="btn btn-success" (click)="updateTheCompany()" [disabled]="!updateCompany.valid">Update Company</button>
+  </form>

@@ -1,0 +1,19 @@
+{
+  "exchange": [
+    {
+      "id": 100,
+      "exchangename": "BSE",
+      "about": "its a good exchange"
+    },
+    {
+      "id": 101,
+      "exchangename": "NSE",
+      "about": "good"
+    },
+    {
+      "id": 122,
+      "exchangename": "aedef",
+      "about": "dgto"
+    }
+  ]
+}

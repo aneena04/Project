@@ -1,0 +1,32 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h3 class="display-4 text-center" style="color: cadetblue;">Add New Companies</h3>
+    <form class=" w-50 container" [formGroup]="companyForm"  (ngSubmit)="onSubmit()" >
+                <div class="form-group">
+                    <label for="name">Company Name</label>
+                    <input type="text" class="form-control " id="name" formControlName="name"
+                    placeholder="Enter the company name">
+                </div>
+
+            
+                <div class="form-group" >
+                    <label for="office">Company head office</label>
+                    <input type="text"  class="form-control" id="office" formControlName="office"  placeholder="Head office">
+                </div>
+                <div class="form-group">
+                    <label for="turnover">Company Turnover</label>
+                    <input type="number"class="form-control" id="turnover"   formControlName="turnover" placeholder="Enter the company turnover">
+                </div>
+                <div class="form-group">
+                    <label for="ceo">CEO</label>
+                    <input class="form-control" type="text"formControlName="ceo"  id="ceo" placeholder="CEO">
+                </div>
+                <div class="form-group">
+                    <label for="directors">Board of Directors</label>
+                    <input class="form-control" type="text"formControlName="directors"  id="directors" placeholder="directors">
+                </div>
+                
+                <button  class="btn btn-success mb-2" type="submit">Add Company</button>
+            </form>
+    </div>
+</div>
