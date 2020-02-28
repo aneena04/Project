@@ -1,0 +1,21 @@
+
+ 
+ 
+ <div class="jumbotron jumbotron-fluid">
+        
+        <div class="container">
+          <h3 class="display-4 text-center" style="color: cadetblue;">Login to Your Account</h3>
+          <form class=" w-50 container" [formGroup]="loginForm"  (ngSubmit)="onSubmit()" >
+            <div class="form-group">
+                        <label for="name">User Name</label>
+                        <input class="form-control" type="text" id="name" placeholder="Select a username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" id="password" placeholder="Password">
+                    </div>
+<div class="inline-"> <button  class="btn btn-success mb-2" type="submit">Submit</button> 
+ <button  class="btn btn-primary mb-2" type="submit">Reset</button></div>
+                </form>
+        </div>
+        </div>

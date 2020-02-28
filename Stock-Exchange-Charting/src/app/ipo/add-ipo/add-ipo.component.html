@@ -1,0 +1,61 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="text-center">Add IPO Details</h2>
+<form [formGroup]="addIpoForm" (ngSubmit)="addIpo()">
+    <div class="form-group">
+      <input type="text" 
+      formControlName="name"
+       placeholder="Enter ipo name " 
+       class="form-control"
+        id="name">
+       
+    </div>
+    <div class="form-group">
+        <input type="text"
+         formControlName="stockExchange"
+          placeholder="Stock Exchange Name" 
+          class="form-control"
+           id="stockExchange">
+    
+     
+    </div>
+     <div class="form-group">
+      <input type="number" 
+
+      formControlName="priceShare"
+       placeholder="Enter Price Per Share"
+         class="form-control" 
+         id="priceShare">
+      
+    </div>
+    <div class="form-group">
+      <input  type="number"
+      formControlName="noOfShares"
+       placeholder="Enter Number of Shares"
+         class="form-control" 
+         id="noOfShares">
+      
+    </div>
+
+    <div class="form-group">
+        <input  type="text"
+        formControlName="remarks"
+         placeholder="Remarks"
+           class="form-control" 
+           id="remarks">
+        
+      </div>
+    
+      <div class="form-group">
+        <input  type="date"
+        formControlName="date"
+         placeholder="Date"
+           class="form-control" 
+           id="date">
+        
+      </div>
+   
+    <button class="btn btn-success" >Add IPO</button>
+  </form>
+  </div>
+  </div>

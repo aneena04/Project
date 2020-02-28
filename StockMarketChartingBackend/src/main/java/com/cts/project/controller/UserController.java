@@ -45,7 +45,7 @@ public class UserController {
 			sm.setFrom("babymol.bobby@gmail.com");
 			sm.setTo(us.getEmail());
 			sm.setSubject("Testing Mail");
-			sm.setText("This is testing mail");
+			sm.setText("Hi"+us.getName() +"Account created click on <a href='http://localhost:4200/activate-user?"+us.getEmail()+"'>Click</a>");
 			jms.send(sm);
 		}
 		catch(Exception e) {
@@ -64,5 +64,19 @@ public class UserController {
 	public User update(@RequestBody User usr) {
 		User us = ur.save(usr);
 		return us;
+	}
+	@PutMapping(value="/users/activate")
+	public String activateUser(@RequestBody String e) {
+		String temp = e.split(":")[1];
+		String email=temp.split("\"")[1];
+		User user = ur.findByEmail(email);			
+		System.out.println(user);
+			if (!user.isEnabled()) {
+				user.setEnabled(true);
+				System.out.println(ur.save(user));
+				return "{\"result\":\"1\"}";
+			} else
+				return "{\"result\":\"0\"}";
+	
 	}
 }

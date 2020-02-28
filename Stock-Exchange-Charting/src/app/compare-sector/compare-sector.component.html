@@ -1,0 +1,40 @@
+
+<div id="body" class="container mt-5">
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <form [formGroup]='comparesector'class="form-group border p-5 border-curved mt-5" >
+        <p class="h1 text-muted text-uppercase text-center mb-4">Compare Sector</p>
+        <label for="sector"> Select Sector:</label>
+        <select class="form-control " id="role">
+            <option>IT <a href="BSE"></a></option>
+            <option>BANKING<a href="NSE"></a></option>
+            <option>MINING<a href="NSE"></a></option>
+            <option>TRADING<a href="NSE"></a></option>
+            <option>OTHERS..<a href="NSE"></a></option>
+          </select>
+     
+        
+          <label for="sector"> Select Stock Exchange:</label>
+        <select class="form-control " id="role">
+            <option>BSE <a href="BSE"></a></option>
+            <option>NSE<a href="NSE"></a></option>
+          </select>
+        <!-- <input type="text" class="form-control" placeholder="Name of Sector" formContrlName="sector" id="sector"> -->
+       
+        
+        <div>
+        <label for="datetime">From:</label><br>
+        <input class="form-control" type="datetime-local" name="datetime" id="datetime" formControlName="datetime">
+         <label for="datetime">To:</label><br>
+        <input class="form-control" type="datetime-local" name="datetime" id="datetime" formControlName="datetime">
+    
+         
+        </div><br><br>
+       
+        
+        <button class="btn btn-success form-control" (click)="submit()" [disabled]="!submit.valid">GENERATE MAP</button>
+      </form>
+    </div>
+</div>
+</div>

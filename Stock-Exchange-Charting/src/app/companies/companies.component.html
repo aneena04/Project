@@ -1,0 +1,28 @@
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>Company Name</th>
+        <th>Sector</th>
+        <th>Turnover</th>
+        <th>Ceo</th>
+        <th>Directors</th>
+
+    </tr>
+    <tr *ngFor="let company of companies">
+        <td>{{company.id}}</td>
+        <td>{{company.name}}</td>
+        <td>{{company.sector}}</td>
+        <td>{{company.turnOver}}</td>   
+        <td>{{company.ceoName}}</td>   
+        <td>{{company.directors}}</td>   
+
+        <td><button class="btn btn-danger" (click)="deleteCompany(company)">Delete</button></td>
+        <td><button class="btn btn-success" (click)="updateCompany(company)">Update</button></td>
+
+    </tr>
+
+</table>
+</div>
+</div>
