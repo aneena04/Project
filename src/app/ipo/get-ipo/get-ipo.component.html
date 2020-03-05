@@ -1,0 +1,32 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">  
+        <div class="table-responsive">
+          <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Stock Exchange</th>
+            <th>Price of Share</th>
+            <th>No of Shares</th>
+            <th>Date</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let ipo of ipos">
+            <td>{{ipo.id}}</td>
+            <td>{{ipo.name}}</td>
+            <td>{{ipo.stockExchange}}</td>            
+            <td>{{ipo.priceShare}}</td>
+            <td>{{ipo.noOfShares}}</td>
+            <td>{{ipo.date}}</td>
+            <td>{{ipo.remarks}}</td>
+
+            <td>
+                <button class="btn btn-danger" (click)="deleteIpo(ipo)">Delete</button>
+                <button class="btn btn-success" (click)="updateIpo(ipo)">Update</button>
+            </td>
+        </tr>  
+    </table>
+</div>
+</div>
+</div>

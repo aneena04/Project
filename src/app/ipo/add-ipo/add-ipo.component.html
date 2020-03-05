@@ -1,0 +1,67 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col">
+        <h2 class="text-center">Add IPO Details</h2>
+<form [formGroup]="addIpoForm" (ngSubmit)="addIpo()">
+    <div class="form-group">
+      <input type="text" 
+      formControlName="name"
+       placeholder="Enter ipo name " 
+       class="form-control"
+        id="name">
+       
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="text"
+         formControlName="stockExchange"
+          placeholder="Stock Exchange Name" 
+          class="form-control"
+           id="stockExchange">
+    
+     
+    </div>
+    <br>
+     <div class="form-group">
+      <input type="number" 
+
+      formControlName="priceShare"
+       placeholder="Enter Price Per Share"
+         class="form-control" 
+         id="priceShare">
+      
+    </div>
+    <br>
+    <div class="form-group">
+      <input  type="number"
+      formControlName="noOfShares"
+       placeholder="Enter Number of Shares"
+         class="form-control" 
+         id="noOfShares">
+      
+    </div>
+<br>
+    <div class="form-group">
+        <input  type="text"
+        formControlName="remarks"
+         placeholder="Remarks"
+           class="form-control" 
+           id="remarks">
+        
+      </div>
+    
+      <br>
+      <div class="form-group">
+        <input  type="date"
+        formControlName="date"
+         placeholder="Date"
+           class="form-control" 
+           id="date">
+        
+      </div>
+   <br>
+    <button class="btn btn-success" >Add IPO</button>
+  </form>
+      </div>
+    </div>
+  </div>

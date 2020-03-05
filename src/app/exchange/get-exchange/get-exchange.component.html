@@ -1,0 +1,31 @@
+    <div class="container">
+        <div class="table-responsive">
+            <h2 class="text-center">Stock Exchange Details </h2>
+
+ <table class="table table-striped bg-white">
+        <tr>
+        
+            <th>Id</th>
+            <th>Stock exchange Name</th>
+            <th>Contact Address</th>
+            <th>Brief</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+            
+        </tr>
+        <tr *ngFor="let exchange of exchanges">
+            <td>{{exchange.id}}</td>
+            <td>{{exchange.exchangename}}</td>
+            <td>{{exchange.contactAddress}}</td>
+            <td>{{exchange.brief}}</td>
+            <td>{{exchange.remarks}}</td>
+            
+
+            <td><button class="btn btn-danger" (click)="deleteExchange(exchange)">Delete</button>
+           <button class="btn btn-success" (click) ="updateExchange(exchange)">Update</button> </td>
+        </tr>
+    </table>
+</div>
+<div>            <a [routerLink]="['/add-exchange']" class="text-center btn btn-block btn-dark">Add Exchange</a>
+</div>
+    </div>

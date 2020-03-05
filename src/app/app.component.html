@@ -1,0 +1,37 @@
+<header class="h-50">
+    <div class="bg-light" >
+        <div class="container w-100 h-50">
+
+        <!-- <img class="img1" src="../assets/logo.png" width="100px" alt="logo"> -->
+            <div class="text-center text-info my-5"><h1>STOCK MARKET CHARTING</h1></div>
+        </div>
+    </div>
+
+    <nav class="navbar  navbar-expand-md navbar-dark bg-dark">
+        <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div id="navbar1" class="collapse navbar-collapse ml-auto">
+            <ul class="navbar-nav justify-content-around w-100 text-center">
+                <li class="nav-item"><a href="#" class="nav-link ">HOME</a></li>
+                <li class="nav-item"><a [routerLink]="['/admin-landing-page']" class="nav-link ">Admin</a></li>
+                <li class="nav-item"><a [routerLink]="['/user-landing-page']" class="nav-link ">User</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">CONTACT US</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">ABOUT US</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer class="page-footer font-small blue bg-dark text-light">
+
+
+    <div class="footer-copyright text-center py-3">&copy; 2020 Copyright:
+        <a href="#">Stock Market Charting</a>
+    </div>
+
+</footer>

@@ -12,15 +12,14 @@ package com.cts.project.dto;
 		String password;
 		String cpassword;
 		boolean enabled;
-		String regStatus;
 		
 
-		public String getRegStatus() {
-			return regStatus;
-		}
-		public void setRegStatus(String regStatus) {
-			this.regStatus = regStatus;
-		}
+//		public String getRegStatus() {
+//			return regStatus;
+//		}
+//		public void setRegStatus(String regStatus) {
+//			this.regStatus = regStatus;
+//		}
 		public UserDTO(int id, String name, String email, long phone, String username, String password, String cpassword,
 				boolean enabled) {
 			super();
