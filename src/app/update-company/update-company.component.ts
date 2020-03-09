@@ -35,7 +35,7 @@ export class UpdateCompanyComponent implements OnInit {
 }
 updateTheCompany(){
 this.companyService.updateCompany(this.updateCompany.value).subscribe(u=>{
-  this.router.navigate(['companies'])
+  this.router.navigate(['/get-company'])
 });
 }
 }

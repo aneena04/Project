@@ -24,4 +24,5 @@ export class StockPriceService {
   getStockPriceById(id: number): Observable<StockPrice> {
     return this.httpclient.get<StockPrice>(this.httpUrl + id);
   }
+  
 }

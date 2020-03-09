@@ -1,11 +1,45 @@
-<div class="jumbotron jumbotron-fluid">
     <div class="container">
 
         <div class="list-group">
-            <a  [routerLink]="['/get-user']" class="list-group-item list-group-item-success">Get User Details</a>
+            <!-- <a  [routerLink]="['/get-user']" class="list-group-item list-group-item-success">Get User Details</a>
             <a  [routerLink]="['/compare-company']" class="list-group-item list-group-item-success">Compare Company</a>
-            <a [routerLink]="['/compare-sector']" class="list-group-item list-group-item-success">Compare Sector</a>
+            <a [routerLink]="['/compare-sector']" class="list-group-item list-group-item-success">Compare Sector</a> -->
             
+            <div class="container">
+                <div class="row justify-content-center my-5">
+                    <div class="card-deck">
+                        <!-- <div class="mx-1"> -->
+                            <div class="col-md">
+                                <div class="card shadow text-center" style="width:20rem;">
+                                    <a [routerLink]="['/view-user-profile']" class="bg-dark p-4 card-hover text-muted"> <i
+                                            class="fas fa-user-circle fa-10x"></i></a>
+                                    <div class=" bg-light">
+                                        <h5 class="card-title">View My Profile</h5>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <div class="col-md">
+                            <div class="card shadow text-center" style="width:20rem;">
+                                <a [routerLink]="['/compare-company']" class="bg-dark p-4 card-hover text-muted"> <i
+                                        class="fas fa-boxes fa-10x"></i></a>
+                                <div class=" bg-light">
+                                    <h5 class="card-title">Compare Companies</h5>
+                                </div>
+                            </div>
+                        
+                    </div>
+                        <!-- </div> -->
+                        <!-- <div class="mx-1"> -->
+                            <div class="col-md">
+                                <div class="card shadow text-center" style="width:20rem;">
+                                    <a [routerLink]="['/compare-sector']" class="bg-dark p-4 card-hover text-muted"> <i
+                                            class="fas fa-building fa-10x"></i></a>
+                                    <div class=" bg-light">
+                                        <h5 class="card-title">Compare Sectors</h5>
+                                            </div>
+                                </div>
+                            </div>
           </div>
 
     </div>

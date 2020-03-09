@@ -26,5 +26,23 @@ export class RegisterService {
   getUserById(id: number): Observable<User> {
     return this.httpClient.get<User>(this.httpUrl + id);
   }
+  activateUser(email: string):Observable<User>{
+    return this.httpClient.get<User>(this.httpUrl + "activate/"+email);
+  }
+  LoggedIn(){
+    let user_id = localStorage.getItem('userId');
+    if(user_id==null){
+      return false;
+    }else{
+      return true;
+    }
+  }
+  isActivated(user:User)
+  {
+    if(user.enabled == true){
+      return true;
+    }
+  }
+
 }
 

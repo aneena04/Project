@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -13,20 +12,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class User {
 	@Id
 	@GeneratedValue
-	int id;
-	String name;
-	String email;
-	long phone;
-	String username;
-	String password;
-	String cpassword;
-	boolean enabled;
+	private int id;
+	private String name;
+	private String email;
+	private long phone;
+	private String username;
+	private String password;
+	private String cpassword;
+	private boolean enabled;
+	private String role="ROLE_USER";
 	
 
-
-	
 	public User(int id, String name, String email, long phone, String username, String password, String cpassword,
-			boolean enabled) {
+			boolean enabled, String role) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -36,9 +34,20 @@ public class User {
 		this.password = password;
 		this.cpassword = cpassword;
 		this.enabled = enabled;
+		this.role = role;
 	}
+
 	public User() {
-		
+
+	}
+	
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public String getCpassword() {
@@ -96,6 +105,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public boolean isEnabled() {
 		return enabled;
 	}
@@ -105,4 +115,3 @@ public class User {
 	}
 
 }
-

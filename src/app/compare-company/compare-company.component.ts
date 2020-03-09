@@ -16,9 +16,11 @@ export class CompareCompanyComponent implements OnInit {
     // compareCompany(){
     //   alert(this.company.values);
     // }
+    
     compareCompany(){
       console.log(this.compare.value);
     }
+    
     ngOnInit() {
       this.service.getAllCompany().subscribe(data =>{
         this.company=data;
@@ -28,5 +30,6 @@ export class CompareCompanyComponent implements OnInit {
         c2:['']
       })
     }
+    
   }
   

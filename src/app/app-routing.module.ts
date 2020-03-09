@@ -7,7 +7,6 @@ import { AddUserComponent } from './user/add-user/add-user.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { GetUserComponent } from './user/get-user/get-user.component';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
-import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { UpdateExcelComponent } from './update-excel/update-excel.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { AddCompanyComponent } from './add-company/add-company.component';
@@ -25,6 +24,10 @@ import { UpdateStockPriceComponent } from './stock-price/update-stock-price/upda
 import { ActivateUserComponent } from './activate-user/activate-user.component';
 import { CompareSectorComponent } from './compare-sector/compare-sector.component';
 import { CompareCompanyComponent } from './compare-company/compare-company.component';
+import { ChartsComponent } from './charts/charts.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 const routes: Routes = [
@@ -35,7 +38,6 @@ const routes: Routes = [
   {path:'admin-landing-page',component:AdminLandingPageComponent},
   {path:'get-user',component:GetUserComponent},
   {path:'update-user',component:UpdateUserComponent},
-  {path:'admin-login',component:AdminLoginComponent},
   {path:'import-exel',component:UpdateExcelComponent},
   {path:'get-company',component:CompaniesComponent},
   {path:'add-company',component:AddCompanyComponent},
@@ -53,6 +55,12 @@ const routes: Routes = [
    {path:'activate-user',component:ActivateUserComponent},
    {path:'compare-sector',component:CompareSectorComponent},
    {path:'compare-company',component:CompareCompanyComponent},
+   {path:'charts',component:ChartsComponent},
+   {path:'view-user-profile',component:UserProfileComponent},
+   {path:'contact-us',component:ContactUsComponent},
+   {path:'about-us',component:AboutUsComponent},
+
+
 
 
 

@@ -7,23 +7,21 @@ import { RegisterService } from '../services/register.service';
   styleUrls: ['./activate-user.component.css']
 })
 export class ActivateUserComponent implements OnInit {
-  msg;
-  constructor(@Inject(RegisterService) private service) { }
+  msg="Invalid Link";
+  constructor(private regService:RegisterService) { }
   ngOnInit() {
     this.checkActivation()
   }
   checkActivation() {
     var urlad = document.URL
     var strarr = urlad.split("?")
-    var str = strarr[1]
-    str = str.substring(0, str.length - 1);
-    this.service.serviceActivation({ email: str }).subscribe(dt => {
-      if (dt.result == 1) {
+    var str = strarr[1];
+    var e=str.substr(0,str.length-1)
+    this.regService.activateUser(e).subscribe(u=>{
+      u.enabled=true;
+      this.regService.updateUser(u).subscribe(u1=>{
         this.msg = "activation successfull"
-      }
-      else {
-        this.msg = "already activated"
-      }
+      });
     });
   }
   

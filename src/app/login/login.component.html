@@ -2,17 +2,19 @@
          
         <div class="container">
           <h3 class="display-4 text-center" style="color: cadetblue;">Login to Your Account</h3>
-          <form class=" w-50 container" [formGroup]="loginForm"  (ngSubmit)="onSubmit()" >
+          <form class=" w-50 container" [formGroup]="loginForm" >
             <div class="form-group">
                         <label for="name">User Name</label>
-                        <input class="form-control" type="text" id="name" placeholder="Select a username">
+                        <input class="form-control" formControlName="username" type="text" id="name" placeholder="Select a username">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input class="form-control" type="password" id="password" placeholder="Password">
+                        <input class="form-control" formControlName="password" type="password" id="password" placeholder="Password">
                     </div>
-<div class="inline-"> <button  class="btn btn-success mb-2" type="submit">Submit</button> 
- <button  class="btn btn-primary mb-2" type="submit">Reset</button></div>
+                    <div>
+                    <button class="btn btn-success" (click)="isValid()" [disabled]="!loginForm.valid" >Login</button>
+
+                    <button  class="btn btn-primary mb-2" type="submit">Reset</button></div>
                 </form>
         </div>
         

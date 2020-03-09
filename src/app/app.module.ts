@@ -7,13 +7,11 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { UpdateExcelComponent } from './update-excel/update-excel.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { GetUserComponent } from './user/get-user/get-user.component';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
-import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { AddCompanyComponent } from './add-company/add-company.component';
 import { CompanyService } from './services/company.service';
@@ -33,6 +31,12 @@ import { ActivateUserComponent } from './activate-user/activate-user.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CompareCompanyComponent } from './compare-company/compare-company.component';
+import { HighchartsChartComponent } from 'highcharts-angular';
+import { ChartsComponent } from './charts/charts.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UpdateExcelComponent } from './update-excel/update-excel.component';
+import { ChangeUserPasswordComponent } from './change-user-password/change-user-password.component';
+
 
 
 @NgModule({
@@ -41,12 +45,10 @@ import { CompareCompanyComponent } from './compare-company/compare-company.compo
     RegisterComponent,
     HomeComponent,
     LoginComponent,
-    UpdateExcelComponent,
     AddUserComponent,
     AdminLandingPageComponent,
     GetUserComponent,
     UpdateUserComponent,
-    AdminLoginComponent,
     CompaniesComponent,
     AddCompanyComponent,
     UpdateCompanyComponent,
@@ -65,7 +67,13 @@ import { CompareCompanyComponent } from './compare-company/compare-company.compo
     ActivateUserComponent,
     AboutUsComponent,
     ContactUsComponent,
-    CompareCompanyComponent
+    CompareCompanyComponent,
+    HighchartsChartComponent,
+    ChartsComponent,
+    UserProfileComponent,
+    UpdateExcelComponent,
+    ChangeUserPasswordComponent
+
     
 
   ],
