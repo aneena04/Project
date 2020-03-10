@@ -36,6 +36,8 @@ import { ChartsComponent } from './charts/charts.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UpdateExcelComponent } from './update-excel/update-excel.component';
 import { ChangeUserPasswordComponent } from './change-user-password/change-user-password.component';
+import { LogoutComponent } from './logout/logout.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 
@@ -72,7 +74,9 @@ import { ChangeUserPasswordComponent } from './change-user-password/change-user-
     ChartsComponent,
     UserProfileComponent,
     UpdateExcelComponent,
-    ChangeUserPasswordComponent
+    ChangeUserPasswordComponent,
+    LogoutComponent,
+    UpdateProfileComponent
 
     
 

@@ -1,5 +1,7 @@
-<div class="jumbotron jumbotron-fluid">
         <div class="container">
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 col">
 <form [formGroup]="updateUser">
     <h2 class="text-center"> Update User</h2>
     <div class="form-group">
@@ -50,5 +52,6 @@
    
     <button class="btn btn-success" (click)="updateTheUser()" [disabled]="!updateUser.valid">Update User</button>
   </form>
+        </div>
         </div>
 </div>

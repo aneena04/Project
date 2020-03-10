@@ -15,7 +15,10 @@ export class UserProfileComponent implements OnInit {
 
 
     updateUser(){
-      this.router.navigate(['/update-user']);
+      this.router.navigate(['/update-profile']);
+    }
+    updatePassword(){
+      this.router.navigate(['/change-password']);
     }
     ngOnInit() {
       const c = localStorage.getItem('userId');

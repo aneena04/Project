@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RegisterService } from './services/register.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private regService:RegisterService){}
+  
   title = 'Stock-Market-Charting';
 }

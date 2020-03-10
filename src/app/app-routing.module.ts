@@ -28,6 +28,9 @@ import { ChartsComponent } from './charts/charts.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LogoutComponent } from './logout/logout.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { ChangeUserPasswordComponent } from './change-user-password/change-user-password.component';
 
 
 const routes: Routes = [
@@ -59,6 +62,9 @@ const routes: Routes = [
    {path:'view-user-profile',component:UserProfileComponent},
    {path:'contact-us',component:ContactUsComponent},
    {path:'about-us',component:AboutUsComponent},
+   {path:'logout',component:LogoutComponent},
+{path:'update-profile',component:UpdateProfileComponent},
+{path:'change-password',component:ChangeUserPasswordComponent}
 
 
 
