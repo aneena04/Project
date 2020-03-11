@@ -7,6 +7,7 @@ export class User
     username:string;
     password:string;
     cpassword:string;
+    role:string;
     enabled:boolean;
     regStatus:string;
     

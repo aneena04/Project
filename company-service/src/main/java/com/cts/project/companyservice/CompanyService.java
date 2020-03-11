@@ -9,6 +9,9 @@ public interface CompanyService {
 	public Company update(Company company);
 	public Company getById(int id);
 	public List<Company> getAll();
+	
+
+		
 
 
 }

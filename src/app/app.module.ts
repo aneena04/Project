@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { GetUserComponent } from './user/get-user/get-user.component';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
@@ -38,6 +38,7 @@ import { UpdateExcelComponent } from './update-excel/update-excel.component';
 import { ChangeUserPasswordComponent } from './change-user-password/change-user-password.component';
 import { LogoutComponent } from './logout/logout.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { HttpinterceptorService } from './services/http-interceptor.service';
 
 
 
@@ -78,7 +79,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     LogoutComponent,
     UpdateProfileComponent
 
-    
+
 
   ],
   imports: [
@@ -88,7 +89,14 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     HttpClientModule
   ],
   providers: [
-    CompanyService
+    CompanyService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpinterceptorService,
+      multi: true
+    }
+
+
   ],
   bootstrap: [AppComponent]
 })

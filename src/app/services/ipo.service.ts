@@ -7,6 +7,8 @@ import { Ipo } from '../model/ipo';
   providedIn: 'root'
 })
 export class IpoService {
+  // private httpUrl='http://localhost:8765/initial-public-offering/ipo/';
+
 
   httpUrl = 'http://localhost:8300/ipo/';
   constructor(private httpClient:HttpClient) { }

@@ -7,6 +7,7 @@ import { Exchange } from '../model/exchange';
   providedIn: 'root'
 })
 export class ExchangeService {
+  
   httpUrl = 'http://localhost:8200/exchange/';
 
   

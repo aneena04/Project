@@ -7,7 +7,9 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class RegisterService {
-  httpUrl = ' http://localhost:8000/user/';
+  httpUrl = ' http://localhost:8765/user-service/user/';
+
+  // httpUrl = ' http://localhost:8000/user/';
   constructor(private httpClient: HttpClient) { }
 
 
@@ -30,12 +32,10 @@ export class RegisterService {
     return this.httpClient.get<User>(this.httpUrl + "activate/"+email);
   }
   LoggedIn(){
-    let user_id = localStorage.getItem('userId');
-    if(user_id==null){
+    let user_id = sessionStorage.getItem('userId');
+    if(user_id==null)
       return false;
-    }else{
-      return true;
-    }
+    return true;
   }
   isActivated(user:User)
   {

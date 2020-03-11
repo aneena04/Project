@@ -7,6 +7,8 @@ import { StockPrice } from '../model/stockprice';​
 })
 export class StockPriceService {
 ​
+// httpUrl = 'http://localhost:8765/stock-price-service/stockprice/';
+
   httpUrl = 'http://localhost:8400/stockprice/';
   constructor(private httpclient: HttpClient, private stockPriceService: StockPriceService) { }
   getAllStockPrice(): Observable<StockPrice[]> {

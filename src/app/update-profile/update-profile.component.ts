@@ -25,7 +25,7 @@ export class UpdateProfileComponent implements OnInit {
         phone: ['', Validators.required]
       });
       
-      const id = localStorage.getItem('userId');
+      const id = sessionStorage.getItem('userId');
       if(+id)
       {
       this.registerService.getUserById(+id).subscribe(user => {

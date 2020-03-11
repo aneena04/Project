@@ -5,16 +5,24 @@
                 <p class="h4 card-header text-center">Compare Company Charts</p>
                 <form class="form-group border p-5 border-curved mt-5"  [formGroup]="compare">
                     <label for="companyname">Company Name 1:</label>
-                    <!-- <input type="text" class="form-control" placeholder="Name of Company"  id="companyname"> -->
-                    <select id="company1" class="form-control" formControlName="c1" >
-                        <!-- <input type="text" name="company1" id="autocomplete"/> -->
-
-                        <!-- <option *ngFor="let comp of company" value={{comp.id}}>{{comp.name}}</option> -->
-                    </select><br>
+                        <div class="form-group">
+                            <input type="text" class="form-control" (input)="onInputChange($event)" list="suggestedCompanies">
+                            <datalist id="suggestedCompanies">
+                                <option *ngFor="let company of companies" [value]="company.name" ></option>
+                            </datalist>
+                        </div>
                     <label for="companyname">Company Name 2:</label>
-                    <select id="company2" class="form-control" formControlName="c2">
-                        <option *ngFor="let comp of company" value={{comp.id}}>{{comp.name}}</option>
-                    </select><br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" (input)="onInputChange($event)" list="suggestedCompanies">
+                        <datalist id="suggestedCompanies">
+                            <option *ngFor="let company of companies" [value]="company.name" ></option>
+                        </datalist>
+                    </div>
+                    <label for="datetime">From:</label><br>
+                    <input class="form-control" type="datetime-local" name="datetime" id="datetime" formControlName="datetime1">
+                     <label for="datetime">To:</label><br>
+                    <input class="form-control" type="datetime-local" name="datetime" id="datetime" formControlName="datetime2">
+                
                     <div class="text-center">
                         <div class="col">
                             <button type="submit" class="btn btn-success"  (click)="compareCompany()">Compare</button>

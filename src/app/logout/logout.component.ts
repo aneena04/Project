@@ -13,7 +13,10 @@ export class LogoutComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    localStorage.removeItem('userId')
+    sessionStorage.removeItem('userId')
+    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('username')
+    sessionStorage.removeItem('userType')
     alert("logged out successfully")
     this.router.navigate(['/login'])
   }

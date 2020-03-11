@@ -16,7 +16,7 @@
                 <li class="nav-item"><a [routerLink]="['']" class="nav-link ">HOME</a></li>
                 <li class="nav-item"><a [routerLink]="['/contact-us']" class="nav-link">CONTACT US</a></li>
                 <li class="nav-item"><a [routerLink]="['/about-us']" class="nav-link">ABOUT US</a></li>
-                <li *ngIf="regService.LoggedIn()" class="nav-item"><a [routerLink]="['/logout']" class="nav-link">Logout</a></li>
+                <li *ngIf="isLoggedIn" class="nav-item"><a [routerLink]="['/logout']" class="nav-link">Logout</a></li>
 
             </ul>
         </div>

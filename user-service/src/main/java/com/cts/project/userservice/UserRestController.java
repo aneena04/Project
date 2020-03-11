@@ -1,10 +1,15 @@
 package com.cts.project.userservice;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.websocket.server.PathParam;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +37,10 @@ public class UserRestController {
 	/*
 	 * @Autowired JavaMailSender jms;
 	 */
+	
+	
+	Logger logger=LoggerFactory.getLogger(this.getClass());
+	
 	@GetMapping("/user")
 	// public List<User> getUsers() {
 	public ResponseEntity<?> getUsers() {
@@ -84,11 +93,38 @@ public class UserRestController {
 			return new ResponseEntity<String>("No such e-mail assigned", HttpStatus.BAD_REQUEST);
 		}
 	}
-
-
-	@GetMapping("/company-by-user")
-	public List<CompanyDTO> getCompanyByStockpriceAll() {
-		return proxy.findAll();
+	
+	
+	@GetMapping("/login")
+	public ResponseEntity<?> login(HttpServletRequest request) {
+		String authorization =request.getHeader("Authorization");
+		logger.info("Login attempt with tooken--> {}",authorization);
+		String username=null;
+		String password=null;
+		if(authorization!=null && authorization.startsWith("Basic")) {
+			String base64Credentials=authorization.substring("Basic".length()).trim();
+			byte[] credDecoded=Base64.getDecoder().decode(base64Credentials);
+			String credentials=new String(credDecoded,StandardCharsets.UTF_8);
+			username=credentials.split(":")[0];
+			password=credentials.split(":")[1];
+		}
+		try {
+			UserDTO user=userService.getUserByUsernameAndPassword(username,password);
+			logger.info("User Logged in Using Username--> {}",username);
+			return new ResponseEntity<UserDTO>(user,HttpStatus.OK);
+		}
+		catch(Exception e) {
+				System.out.println(e.getStackTrace());
+				logger.info("Unauthorized Access --->{}",e.getStackTrace().toString());
+				return new ResponseEntity<String>("No user found",HttpStatus.NOT_FOUND);
+		}
 	}
+	
+
+
+//	@GetMapping("/company-by-user")
+//	public List<CompanyDTO> getCompanyByStockpriceAll() {
+//		return proxy.findAll();
+//	}
 
 }

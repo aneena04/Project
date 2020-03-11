@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UploadService {
+  // private httpUrl='http://localhost:8765/stockprice-service/stockPrices/';
 
   private httpUrl='http://localhost:8005/stockPrices/';
   constructor(private httpClient: HttpClient) { }

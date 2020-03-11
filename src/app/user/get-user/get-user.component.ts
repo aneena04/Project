@@ -10,8 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./get-user.component.css']
 })
 export class GetUserComponent implements OnInit {
-constructor(private registerService:RegisterService,private router:Router) { }
-users:User[];
+constructor(private registerService:RegisterService,private router:Router) { 
+  console.log("hello")
+}
+users: any;
   ngOnInit() {
     this.registerService.getAllUsers().subscribe(data =>{
       this.users=data;

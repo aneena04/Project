@@ -1,10 +1,10 @@
 package com.cts.project.userservice;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
-
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -67,6 +67,30 @@ public class UserServiceImpl implements UserService {
 	public User activateUser(String email) {
 		return userRepo.findByEmail(email);
 				
+	}
+	
+	@Override
+	public String alter(User user) {
+		User users = new User();
+		
+		if(getById(user.getId()).isEnabled()) {
+			user.setEnabled(true);
+		}
+		BeanUtils.copyProperties(user, users);
+		users=userRepo.save(users);
+		if(users!=null) {
+		return "{\"res\":\"1\"}";}
+		else {
+			return "{\"res\":\"0\"}";
+		}
+	}
+
+	@Override
+	public UserDTO getUserByUsernameAndPassword(String username, String password) throws NoSuchElementException{
+		User user = userRepo.findByUsernameAndPassword(username, password);
+		UserDTO userDTO = new UserDTO();
+		BeanUtils.copyProperties(user, userDTO);
+		return userDTO;
 	}
 
 		

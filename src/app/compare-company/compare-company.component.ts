@@ -20,14 +20,19 @@ export class CompareCompanyComponent implements OnInit {
     compareCompany(){
       console.log(this.compare.value);
     }
+    // onInputChange(e){
+    //   this.service.getAllCompaniesByPattern(e.target.value).subscribe(data => {
+    //         this.company = data;
+    //   });
+    // }
     
     ngOnInit() {
       this.service.getAllCompany().subscribe(data =>{
         this.company=data;
       });
       this.compare=this.formBuilder.group({
-        c1:[''],
-        c2:['']
+        suggestedCompanies:[''],
+        suggestedCompanies2:['']
       })
     }
     
