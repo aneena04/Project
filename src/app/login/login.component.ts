@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
     let password=this.loginForm.get("password").value;
     const result$=this.authService.authenticate(username,password);
     result$.subscribe(data=>{
-      console.log(data);
     if(data.role=='ROLE_ADMIN'){
       this.router.navigate(['/admin-landing-page']);
 

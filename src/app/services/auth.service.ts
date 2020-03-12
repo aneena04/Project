@@ -11,24 +11,19 @@ export class AuthService {
   constructor(private registerService: RegisterService, private http: HttpClient) {}
   authenticate(username: string, password: string) {
     let authenticationToken = "Basic " + window.btoa(username + ":" + password);
-    console.log(authenticationToken);
     let headers = new HttpHeaders({
       Authorization: authenticationToken
     });
-    console.log("calling server")
     return this.http.get(url, { headers }).pipe(
       map(successData => {
-        console.log("success ")
         sessionStorage.setItem("username",username);
         sessionStorage.setItem("token", authenticationToken);
         return successData;
       }),
       map(failureData => {
-        console.log("failure")
         return failureData;
       }),
       map((data: User) => {
-        console.log(data);
         sessionStorage.setItem("username", username);
         sessionStorage.setItem("userId", data.id.toString());
         sessionStorage.setItem("token", authenticationToken);
@@ -62,7 +57,7 @@ export class AuthService {
     sessionStorage.removeItem("token")
   }
   getUserDetails(): string {
-    let user = sessionStorage.getItem('username');
+    let user = sessionStorage.getItem('userId');
     return user;
   }
 }

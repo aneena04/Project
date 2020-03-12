@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CompareCompanyService } from '../services/compare-company.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Company } from '../model/company';
+import { CompanyService } from '../services/company.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-compare-company',
@@ -10,29 +11,33 @@ import { Company } from '../model/company';
 })
 export class CompareCompanyComponent implements OnInit {
 
-    constructor(private service:CompareCompanyService, private formBuilder:FormBuilder) { }
+
+    constructor(private service:CompanyService, private formBuilder:FormBuilder,private router:Router) { }
     compare : FormGroup;
     company : Company[];
-    // compareCompany(){
-    //   alert(this.company.values);
-    // }
     
     compareCompany(){
-      console.log(this.compare.value);
+this.router.navigate(['/charts'])
+      
+    
     }
-    // onInputChange(e){
-    //   this.service.getAllCompaniesByPattern(e.target.value).subscribe(data => {
-    //         this.company = data;
-    //   });
-    // }
+    onInputChange(e){
+      this.service.getAllCompaniesByPattern(e.target.value).subscribe(data => {
+            this.company = data;
+      });
+    }
     
     ngOnInit() {
       this.service.getAllCompany().subscribe(data =>{
         this.company=data;
       });
       this.compare=this.formBuilder.group({
-        suggestedCompanies:[''],
-        suggestedCompanies2:['']
+        name:[''],
+        name2:[''],
+        date1:[''],
+        date2:[''],
+
+
       })
     }
     

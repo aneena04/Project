@@ -10,7 +10,5 @@ public interface UserService {
 	public User getById(int id);
 	public List<User> getAll();
 	public User activateUser(String email);
-	String alter(User user);
-	public UserDTO getUserByUsernameAndPassword(String username, String password);
 
 }

@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.cts.project.stockpriceservice.CompanyDTO;
 
-@FeignClient("netflix-zuul-api-gateway-server")
-//@FeignClient("company-service")
+
+@FeignClient("company-service")
 public interface CompanyServiceProxy {
 	
-	@GetMapping("/company-service/company")
+	@GetMapping("/company")
 	public List<CompanyDTO> findAll() ;
 
 	

@@ -7,7 +7,6 @@ import { HttpInterceptor, HttpRequest, HttpHandler } from '@angular/common/http'
 export class HttpinterceptorService implements HttpInterceptor{
   constructor(public auth:AuthService) { }
   intercept(request:HttpRequest<any>,next:HttpHandler){
-    console.log("inside interceptor");
     if(this.auth.getAuthenticationToken()){
       //request cannot be directly manipulated
       //it has to be cloned

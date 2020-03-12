@@ -17,7 +17,6 @@ export class GetExchangeComponent implements OnInit {
   ngOnInit() {
     this.exchangeService.getAllExchange().subscribe((exch: Exchange[]) => {
       this.exchanges = exch;
-      console.log(exch);
 
     });
   }

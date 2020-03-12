@@ -1,27 +1,27 @@
-<div class="container" style="width:auto;">
-    <div class="row m-4">
-        <div class="col" style="height: 70vh;">
-            <div class="card shadow">
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6 col">
                 <p class="h4 card-header text-center">Compare Company Charts</p>
                 <form class="form-group border p-5 border-curved mt-5"  [formGroup]="compare">
                     <label for="companyname">Company Name 1:</label>
                         <div class="form-group">
-                            <input type="text" class="form-control" (input)="onInputChange($event)" list="suggestedCompanies">
+                            <input type="text" class="form-control" formControlName="name" (input)="onInputChange($event)" list="suggestedCompanies">
                             <datalist id="suggestedCompanies">
-                                <option *ngFor="let company of companies" [value]="company.name" ></option>
+                                <option *ngFor="let comp of company" [value]="comp.name" ></option>
                             </datalist>
                         </div>
                     <label for="companyname">Company Name 2:</label>
                     <div class="form-group">
-                        <input type="text" class="form-control" (input)="onInputChange($event)" list="suggestedCompanies">
-                        <datalist id="suggestedCompanies">
-                            <option *ngFor="let company of companies" [value]="company.name" ></option>
+                        <input type="text" class="form-control" formControlName="name2"  (input)="onInputChange($event)" list="suggestedCompanies1">
+                        <datalist id="suggestedCompanies1">
+                            <option *ngFor="let comp of company" [value]="comp.name" ></option>
                         </datalist>
                     </div>
-                    <label for="datetime">From:</label><br>
-                    <input class="form-control" type="datetime-local" name="datetime" id="datetime" formControlName="datetime1">
-                     <label for="datetime">To:</label><br>
-                    <input class="form-control" type="datetime-local" name="datetime" id="datetime" formControlName="datetime2">
+                    <label for="date1">From:</label><br>
+                    <input class="form-control" type="date" name="date1" id="date1" formControlName="date1">
+                     <label for="date2">To:</label><br>
+                    <input class="form-control" type="date" name="date2" id="date2" formControlName="date2">
                 
                     <div class="text-center">
                         <div class="col">
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+        
         </div>
     </div>
 </div>

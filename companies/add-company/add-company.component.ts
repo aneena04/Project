@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanyService } from '../../service/company.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-add-company',
@@ -26,14 +26,12 @@ AddCompanyForm :FormGroup
     
     addCompany()
     {
-      this.companyService.saveCompany(this.AddCompanyForm.value).subscribe( data =>{
-        console.log("Company inserted Successfully")
+      this.companyService.addCompany(this.AddCompanyForm.value).subscribe( data =>{
        this.router.navigate(['/company']); 
       });
       }
     
     
     onSubmit() {
-      console.log(this.AddCompanyForm.value);
     }
     }

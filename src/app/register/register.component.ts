@@ -33,8 +33,6 @@ registerForm:FormGroup
   }
   onSubmit() {
     this.registerService.saveUser(this.registerForm.value).subscribe(data => {
-      console.log('user entered successfully' + data);
-      console.log('registration status '+ data.regStatus)
       this.registerForm.reset();
 
     })

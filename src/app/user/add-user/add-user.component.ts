@@ -24,7 +24,6 @@ export class AddUserComponent implements OnInit {
   }
   addUser() {
     this.userServices.saveUser(this.registerUser.value).subscribe(data => {
-      console.log('user entered successfully' + data);
       this.registerUser.reset();
 
     });

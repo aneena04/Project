@@ -31,6 +31,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LogoutComponent } from './logout/logout.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ChangeUserPasswordComponent } from './change-user-password/change-user-password.component';
+import { UserViewIpoComponent } from './user-view-ipo/user-view-ipo.component';
 
 
 const routes: Routes = [
@@ -64,7 +65,9 @@ const routes: Routes = [
    {path:'about-us',component:AboutUsComponent},
    {path:'logout',component:LogoutComponent},
 {path:'update-profile',component:UpdateProfileComponent},
-{path:'change-password',component:ChangeUserPasswordComponent}
+{path:'change-password',component:ChangeUserPasswordComponent},
+{path:'get-user-ipo',component:UserViewIpoComponent},
+
 
 
 

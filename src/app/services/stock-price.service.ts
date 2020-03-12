@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StockPrice } from '../model/stockprice';​
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ export class StockPriceService {
 ​
 // httpUrl = 'http://localhost:8765/stock-price-service/stockprice/';
 
-  httpUrl = 'http://localhost:8400/stockprice/';
+  httpUrl = environment.host+'stock-price-service/stockPrice';
   constructor(private httpclient: HttpClient, private stockPriceService: StockPriceService) { }
   getAllStockPrice(): Observable<StockPrice[]> {
     return this.httpclient.get<StockPrice[]>(this.httpUrl);
@@ -26,5 +27,8 @@ export class StockPriceService {
   getStockPriceById(id: number): Observable<StockPrice> {
     return this.httpclient.get<StockPrice>(this.httpUrl + id);
   }
-  
+  uploadStocksSheet(formData:FormData):Observable<void>{
+    return this.httpclient.post<void>(this.httpUrl+"/uploadStocksSheet",formData);
+  }
+
 }

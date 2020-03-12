@@ -19,11 +19,13 @@
             <td>{{ipo.noOfShares}}</td>
             <td>{{ipo.date}}</td>
             <td>{{ipo.remarks}}</td>
-
+            <div>
             <td>
                 <button class="btn btn-danger" (click)="deleteIpo(ipo)">Delete</button>
                 <button class="btn btn-success" (click)="updateIpo(ipo)">Update</button>
             </td>
+        </div>
+
         </tr>  
     </table>
 </div>

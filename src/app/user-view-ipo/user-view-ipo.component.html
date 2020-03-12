@@ -1,0 +1,29 @@
+<div class="container">  
+    <div><h2 class="text-light">IPO Details</h2></div>
+    <div class="table-responsive">
+        <table class="table table-striped bg-white">
+            <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Stock Exchange</th>
+        <th>Price of Share</th>
+        <th>No of Shares</th>
+        <th>Date</th>
+        <th>Remarks</th>
+    </tr>
+    <tr *ngFor="let ipo of ipos">
+        <td>{{ipo.id}}</td>
+        <td>{{ipo.name}}</td>
+        <td>{{ipo.stockExchange}}</td>            
+        <td>{{ipo.priceShare}}</td>
+        <td>{{ipo.noOfShares}}</td>
+        <td>{{ipo.date}}</td>
+        <td>{{ipo.remarks}}</td>
+        <div>
+      
+    </div>
+
+    </tr>  
+</table>
+</div>
+</div>

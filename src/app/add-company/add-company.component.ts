@@ -26,7 +26,6 @@ name:['',Validators.required],
   }
 onSubmit(){
   this.companyService.addCompany(this.companyForm.value).subscribe(data=>{
-    console.log('Company entered successfully '+data);
     this.companyForm.reset();
   })
 

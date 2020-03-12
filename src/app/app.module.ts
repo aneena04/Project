@@ -39,6 +39,7 @@ import { ChangeUserPasswordComponent } from './change-user-password/change-user-
 import { LogoutComponent } from './logout/logout.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { HttpinterceptorService } from './services/http-interceptor.service';
+import { UserViewIpoComponent } from './user-view-ipo/user-view-ipo.component';
 
 
 
@@ -77,7 +78,8 @@ import { HttpinterceptorService } from './services/http-interceptor.service';
     UpdateExcelComponent,
     ChangeUserPasswordComponent,
     LogoutComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    UserViewIpoComponent
 
 
 

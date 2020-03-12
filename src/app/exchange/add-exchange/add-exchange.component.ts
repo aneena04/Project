@@ -28,12 +28,10 @@ exchange:Exchange;
     addExchange()
     {
       this.exchangeService.saveExchange(this.AddExchangeForm.value).subscribe(d=>{
-        console.log("company inserted successfully");
         this.router.navigate(['/get-exchange']);
       })
     }
     // onSubmit(){
-    //   console.log(this.AddExchangeForm.value);
     //   this.AddExchangeForm.reset();
 
     //}

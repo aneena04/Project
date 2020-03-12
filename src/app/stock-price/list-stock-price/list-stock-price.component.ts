@@ -25,8 +25,8 @@ export class ListStockPriceComponent implements OnInit {
   // }
   updateStockPrice(stockPrice:StockPrice)
   {
-    localStorage.removeItem('stockId');
-    localStorage.setItem('stockId',stockPrice.id.toString());
+    sessionStorage.removeItem('stockId');
+    sessionStorage.setItem('stockId',stockPrice.id.toString());
     this.router.navigate(['/update-stock-price'])
   }
 
