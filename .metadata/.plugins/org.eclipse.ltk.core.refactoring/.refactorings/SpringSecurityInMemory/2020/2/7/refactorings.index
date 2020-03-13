@@ -1,0 +1,9 @@
+1581673252018	Move 'hr.jsp' to 'webapp'
+1581673262557	Move 'admin.jsp' to 'webapp'
+1581673266633	Move 'manager.jsp' to 'webapp'
+1581673269944	Move 'employee.jsp' to 'webapp'
+1581673278861	Move 'header.jsp' to 'webapp'
+1581677345892	Move 'web.xml' to 'webapp'
+1581677350379	Move 'web.xml' to 'WEB-INF'
+1581677554006	Move 5 resources to 'views'
+1581680582038	Delete element

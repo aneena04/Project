@@ -1,0 +1,19 @@
+package com.cts.training.middle.config;
+
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+public class ViewResolverConfiguration {
+	public ViewResolver getViewResolver() {
+		
+		InternalResourceViewResolver viewResolver= new InternalResourceViewResolver();
+				
+				viewResolver.setPrefix("/WEB-INF/views/");
+		viewResolver.setSuffix(".jsp");
+
+		
+		return null;
+		
+	}
+
+}

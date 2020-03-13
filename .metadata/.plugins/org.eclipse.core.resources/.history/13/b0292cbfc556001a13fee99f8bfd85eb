@@ -1,0 +1,79 @@
+package com.cts.project.bean;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Component
+@Table(name = "stock_exchanges")
+@XmlRootElement(name = "stock_exchanges")
+
+public class StockExchange {
+
+	@Id
+	@GeneratedValue
+	private int id;
+	private String exchangeName;
+	private String contactAddress;
+	private String brief;
+	private String remarks;
+
+	public StockExchange() {
+
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getExchangeName() {
+		return exchangeName;
+	}
+
+	public void setExchangeName(String exchangeName) {
+		this.exchangeName = exchangeName;
+	}
+
+	public String getContactAddress() {
+		return contactAddress;
+	}
+
+	public void setContactAddress(String contactAddress) {
+		this.contactAddress = contactAddress;
+	}
+
+	public String getBrief() {
+		return brief;
+	}
+
+	public void setBrief(String brief) {
+		this.brief = brief;
+	}
+
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+
+	public StockExchange(int id, String exchangeName, String contactAddress, String brief, String remarks) {
+		super();
+		this.id = id;
+		this.exchangeName = exchangeName;
+		this.contactAddress = contactAddress;
+		this.brief = brief;
+		this.remarks = remarks;
+	}
+
+}

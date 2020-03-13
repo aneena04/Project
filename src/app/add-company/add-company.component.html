@@ -9,10 +9,17 @@
                     placeholder="Enter the company name">
                 </div>
 
-            
-                <div class="form-group" >
-                    <input type="text"  class="form-control" id="sector" formControlName="sector"  placeholder="Enter the Sector">
-                </div>
+            <div class="form-group">
+                <select class="form-control "placeholder="Enter Sector" id="sector">
+                    <option selected disabled>Select Sector</option>
+                    <option>IT <a href="BSE"></a></option>
+                    <option>BANKING<a href="NSE"></a></option>
+                    <option>MINING<a href="NSE"></a></option>
+                    <option>TRADING<a href="NSE"></a></option>
+                    <option>OTHERS..<a href="NSE"></a></option>
+                  </select>
+            </div>
+                
                 <div class="form-group">
                     <input type="number"class="form-control" id="turnover"   formControlName="turnOver" placeholder="Enter the company turnover">
                 </div>

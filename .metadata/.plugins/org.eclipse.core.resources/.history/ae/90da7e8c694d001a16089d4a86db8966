@@ -1,0 +1,47 @@
+package com.cts.training.middle.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.cts.training.dao.RegisterDAO;
+import com.cts.training.model.Register;
+
+@Controller
+public class UserController {
+
+	@Autowired
+	RegisterDAO registerDAO;
+	
+	
+	@GetMapping("/user-home")
+	public String userPage(Model model)
+	{
+		model.addAttribute("user", new Register());//user will work as a model attribute in a form
+		return "users";
+		
+	}
+	
+	@PostMapping("/user/save")
+	//or @RequestMapping(value="/user/save",method=RequestMethod.post)
+	public String addUser(@ModelAttribute("user") Register register)
+	{
+		registerDAO.saveUser(register);
+		return "redirect:/user-home";
+	}
+	
+	//@GetMapping("/remove/{id}")
+//	public String deleteUser(@PathVariable("id")int id){
+//		Register register=registerDAO.getUserById(id);
+////		registerDAO.deleteUser
+//		
+//		
+////		return 
+//		
+//	}
+}
+

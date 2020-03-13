@@ -1,9 +1,11 @@
 <header class="h-50">
-    <div class="bg-light" >
+    <div class="bg-light">
         <div class="container w-100 h-50">
 
-        <!-- <img class="img1" src="../assets/logo.png" width="100px" alt="logo"> -->
-            <div class="text-center text-info my-5"><h1>STOCK MARKET CHARTING</h1></div>
+            <!-- <img class="img1" src="../assets/logo.png" width="100px" alt="logo"> -->
+            <div class="text-center text-info my-5">
+                <h1>STOCK MARKET CHARTING</h1>
+            </div>
         </div>
     </div>
 
@@ -17,7 +19,7 @@
                 <li class="nav-item"><a [routerLink]="['/contact-us']" class="nav-link">CONTACT US</a></li>
                 <li class="nav-item"><a [routerLink]="['/about-us']" class="nav-link">ABOUT US</a></li>
                 <li *ngIf="isLoggedIn" class="nav-item"><a [routerLink]="['/logout']" class="nav-link">Logout</a></li>
-
+                <!-- <li>Welcome{{user.username}}</li> -->
             </ul>
         </div>
     </nav>

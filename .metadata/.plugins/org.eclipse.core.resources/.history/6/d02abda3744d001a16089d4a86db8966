@@ -1,0 +1,38 @@
+package com.cts.training.middle.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.cts.training.dao.CompanyDAO;
+import com.cts.training.dao.RegisterDAO;
+import com.cts.training.model.Company;
+import com.cts.training.model.Register;
+
+@Controller
+public class CompanyController {
+
+	@Autowired
+	CompanyDAO companyDAO;
+	
+	
+	@GetMapping("/company-home")
+	public String companyPage(Model model)
+	{
+		model.addAttribute("company", new Company());//user will work as a model attribute in a form
+		return "companyoperations";
+	}
+	
+	@PostMapping("/company/save")
+	//or @RequestMapping(value="/user/save",method=RequestMethod.post)
+	public String addUser(@ModelAttribute("company") Company company)
+	{
+		companyDAO.saveCompany(company);
+		return "redirect:/company-home";
+	}
+}
+
+

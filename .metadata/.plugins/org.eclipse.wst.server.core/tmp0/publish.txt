@@ -1,0 +1,7 @@
+#Tomcat publish data
+#Sat Feb 22 15:30:15 IST 2020
+org.eclipse.jst.j2ee.server\:ProjectWork=WEB-INF/lib/ProjectWork-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\DELL\\Desktop\\PROJECT\ BACKEND\\springrestservice\\WebContent\\WEB-INF\\lib\\spring-web-4.0.0.RELEASE.jar=WEB-INF/lib/spring-web-4.0.0.RELEASE.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\DELL\\.m2\\repository\\org\\springframework\\spring-web\\4.2.3.RELEASE\\spring-web-4.2.3.RELEASE.jar=WEB-INF/lib/spring-web-4.2.3.RELEASE.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\DELL\\.m2\\repository\\org\\springframework\\spring-web\\5.2.3.RELEASE\\spring-web-5.2.3.RELEASE.jar=WEB-INF/lib/spring-web-5.2.3.RELEASE.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\DELL\\.m2\\repository\\org\\springframework\\spring-web\\4.3.0.RELEASE\\spring-web-4.3.0.RELEASE.jar=WEB-INF/lib/spring-web-4.3.0.RELEASE.jar

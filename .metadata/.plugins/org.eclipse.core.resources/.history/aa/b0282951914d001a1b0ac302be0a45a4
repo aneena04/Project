@@ -1,0 +1,57 @@
+package com.cts.training.middle.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.cts.training.dao.RegisterDAO;
+import com.cts.training.model.Register;
+
+@Controller
+public class UserController {
+
+	@Autowired
+	RegisterDAO registerDAO;
+	
+	
+	@GetMapping("/user-home")
+	public String userPage(Model model)
+	{
+		List<Register> users= registerDAO.getAllUsers();
+		model.addAttribute("list", users);
+		model.addAttribute("user", new Register());//user will work as a model attribute in a form
+		return "users";
+	}
+	
+	@PostMapping("/user/save")
+	//or @RequestMapping(value="/user/save",method=RequestMethod.post)
+	public String addUser(@ModelAttribute("user") Register register)
+	{
+		registerDAO.saveUser(register);
+		return "redirect:/user-home";
+	}
+	
+	@GetMapping("/user/remove/{id}")//{}----path variable
+	public String deleteUser(@PathVariable("id")int id) //  or (@RequestParam("id")int id)<c:url value='/remove?id=${user.id}
+	{	
+	Register user=registerDAO.getUserById(id);
+		registerDAO.deleteUser(user);
+		return "redirect:/user-home";
+	}
+	@GetMapping("/update/{id}")
+	public String updateUser(@PathVariable("id") int id, Model model)
+	{
+		Register register= registerDAO.getUserById(id);
+		model.addAttribute("user",register);
+		List<Register> users= registerDAO.getAllUsers();
+		model.addAttribute("list", users);
+		return "users";
+	}
+}
+

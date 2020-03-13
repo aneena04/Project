@@ -1,0 +1,47 @@
+package com.cts.project.netflixzuulapigatewayserver;
+
+
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
+	@Autowired
+	DataSource datasource;
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests().antMatchers("/login").permitAll().antMatchers("/user-service/**")
+				.access("hasRole('ADMIN')").and().formLogin();
+	}
+
+	@Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		
+		auth.jdbcAuthentication()
+		.usersByUsernameQuery("select username,password,enabled from user where username=?")
+		
+		.authoritiesByUsernameQuery("select username,role from user where username=?")
+		.dataSource(datasource)
+		.passwordEncoder(new PasswordEncoder() {
+			
+			@Override
+			public boolean matches(CharSequence rawPassword, String encodedPassword) {
+				return rawPassword.equals(encodedPassword);
+			}
+			
+			@Override
+			public String encode(CharSequence rawPassword) {
+				return rawPassword.toString();
+			}
+			
+		});
+		
+	}
+
+}

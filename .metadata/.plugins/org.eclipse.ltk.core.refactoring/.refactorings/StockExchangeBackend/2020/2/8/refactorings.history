@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;com.cts.training.model.Company.directors&apos; in &apos;com.cts.training.model.Company&apos;&#x0D;&#x0A;- Original project: &apos;StockExchangeBackend&apos;&#x0D;&#x0A;- Original element: &apos;com.cts.training.model.Company.directors&apos;&#x0D;&#x0A;- Getter method name: &apos;getDirectors&apos;&#x0D;&#x0A;- Setter method name: &apos;setDirectors&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;directors&apos;" flags="589830" getter="getDirectors" id="org.eclipse.jdt.ui.self.encapsulate" input="/src\/main\/java&lt;com.cts.training.model{Company.java[Company^directors" insertion="12" setter="setDirectors" stamp="1582355103103" version="1.0" visibility="1"/>
+</session>

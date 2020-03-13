@@ -1,0 +1,78 @@
+
+package com.cts.project.stockpriceservice;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@Entity
+@Table(name = "stockprices")
+@XmlRootElement(name = "stockpricelists")
+public class StockPrice {
+	@Id
+	@GeneratedValue
+	private int id;
+	private String companyCode;
+	private String stockExchangeName;
+	private LocalDate startDate;
+	private LocalDate endDate;
+	public StockPrice() {}
+	public StockPrice(String companyCode, String stockExchangeName, LocalDate startDate,
+			LocalDate endDate) {
+		
+		this.companyCode = companyCode;
+		this.stockExchangeName = stockExchangeName;
+		this.startDate = startDate;
+		this.endDate = endDate;
+
+	
+	}
+	
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCompanyCode() {
+		return companyCode;
+	}
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
+	}
+	public String getStockExchangeName() {
+		return stockExchangeName;
+	}
+	public void setStockExchangeName(String stockExchangeName) {
+		this.stockExchangeName = stockExchangeName;
+	}
+//	public Long getStockPrice() {
+//		return stockPrice;
+//	}
+//	public void setStockPrice(Long stockPrice) {
+//		this.stockPrice = stockPrice;
+//	}
+	public LocalDate getDate() {
+		return startDate;
+	}
+	public void setDate(LocalDate date) {
+		this.startDate = date;
+	}
+	}

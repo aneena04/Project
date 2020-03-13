@@ -1,0 +1,5 @@
+package com.cts.training.middle.config;
+
+public class ViewResolverConfiguration {
+
+}

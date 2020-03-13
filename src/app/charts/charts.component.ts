@@ -16,10 +16,10 @@ export class ChartsComponent implements OnInit {
   title = 'myHighchart';
    
   data = [{
-          name: 'xxx',
-          data: [500, 700, 555, 444, 777, 877, 944, 567, 666, 789, 456, 654]
+          name: 'Cognizant',
+          data: [500, 700, 555, 655, 1055, 877, 944, 567, 666, 789, 456, 654]
        },{
-          name: 'yyy',
+          name: 'HDFC',
           data: [677, 455, 677, 877, 455, 778, 888, 567, 785, 488, 567, 654]
        }];
  
@@ -29,14 +29,14 @@ export class ChartsComponent implements OnInit {
        type: "column"
     },
     title: {
-       text: "Monthly Site Visitor"
+       text: "Monthly Stock Price"
     },
     xAxis:{
        categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     },
     yAxis: {          
        title:{
-          text:"Visitors"
+          text:"Stock Price"
        } 
     },
     series: this.data
