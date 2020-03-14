@@ -2,7 +2,6 @@
     <div class="bg-light">
         <div class="container w-100 h-50">
 
-            <!-- <img class="img1" src="../assets/logo.png" width="100px" alt="logo"> -->
             <div class="text-center text-info my-5">
                 <h1>STOCK MARKET CHARTING</h1>
             </div>
@@ -16,10 +15,9 @@
         <div id="navbar1" class="collapse navbar-collapse ml-auto">
             <ul class="navbar-nav justify-content-around w-100 text-center">
                 <li class="nav-item"><a [routerLink]="['']" class="nav-link ">HOME</a></li>
-                <li class="nav-item"><a [routerLink]="['/contact-us']" class="nav-link">CONTACT US</a></li>
                 <li class="nav-item"><a [routerLink]="['/about-us']" class="nav-link">ABOUT US</a></li>
+                <li class="nav-item"><a [routerLink]="['/contact-us']" class="nav-link">CONTACT US</a></li>
                 <li *ngIf="isLoggedIn" class="nav-item"><a [routerLink]="['/logout']" class="nav-link">Logout</a></li>
-                <!-- <li>Welcome{{user.username}}</li> -->
             </ul>
         </div>
     </nav>

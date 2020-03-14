@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Company } from '../model/company';
 import { CompanyService } from '../services/company.service';
 import { Router } from '@angular/router';
@@ -11,35 +11,29 @@ import { Router } from '@angular/router';
 })
 export class CompareCompanyComponent implements OnInit {
 
-
-    constructor(private service:CompanyService, private formBuilder:FormBuilder,private router:Router) { }
-    compare : FormGroup;
-    company : Company[];
-    
-    compareCompany(){
-this.router.navigate(['/charts'])
-      
-    
-    }
-    onInputChange(e){
-      this.service.getAllCompaniesByPattern(e.target.value).subscribe(data => {
-            this.company = data;
-      });
-    }
-    
+    compareCompany:FormGroup;
+    companies:Company[];
+    constructor(private companyservice: CompanyService, private formBuilder: FormBuilder,private router:Router) { }
     ngOnInit() {
-      this.service.getAllCompany().subscribe(data =>{
-        this.company=data;
+      this.compareCompany=this.formBuilder.group({
+        "selectCompany":['',Validators.required],
+        "selectStock":['',Validators.required],
+        "companyName1":['',Validators.required],
+        "companyName2":['',Validators.required],
+        "from_period":['',Validators.required],
+        "to_period":['',Validators.required]
       });
-      this.compare=this.formBuilder.group({
-        name:[''],
-        name2:[''],
-        date1:[''],
-        date2:[''],
-
-
+      this.companyservice.getAllCompany().subscribe(data=>{
+        this.companies=data;
+      });
+    }
+    onSubmit(){
+      this.router.navigate(["/charts"],{
+        queryParams:{
+          formData:JSON.stringify(this.compareCompany.value)
+        }
       })
     }
-    
   }
+  
   

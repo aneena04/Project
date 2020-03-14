@@ -4,6 +4,7 @@ export class Company{
   }
     id:number;
     name:string;
+    code:string;
     sector:string;
     turnOver:number;
     ceoName:string;

@@ -19,6 +19,7 @@ export class AddCompanyComponent implements OnInit {
 id:[''],
 name:['',Validators.required],
       sector: ['',Validators.required],
+      code:['',Validators.required],
       turnOver: ['',Validators.required],
       ceoName:  ['', Validators.required],
       directors:['', Validators.required]

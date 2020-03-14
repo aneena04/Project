@@ -9,7 +9,6 @@
             <th>Current Price</th>
             <th>Date</th>
             <th>Time</th>
-            <!-- <th>Actions</th> -->
         </tr>
         <tr *ngFor="let stock of stockPrices">
             <td>{{stock.id}}</td>
@@ -18,10 +17,7 @@
             <td>{{stock.currentPrice}}</td>
             <td>{{stock.date}}</td>
             <td>{{stock.time}}</td>
-            <!-- <td>
-                <button class="btn btn-danger" (click)="deleteStockPrice(stock)">Delete</button></td>
-                <td><button class="btn btn-success" (click)="updateStockPrice(stock)">Update</button>
-            </td> -->
+           
         </tr>  
     </table>
 </div>

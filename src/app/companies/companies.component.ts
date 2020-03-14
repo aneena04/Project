@@ -26,7 +26,7 @@ export class CompaniesComponent implements OnInit {
     }
     updateCompany(company:Company){
       localStorage.removeItem('Id');
-  localStorage.setItem('Id',company.id.toString());
+  sessionStorage.setItem('Id',company.id.toString());
   this.router.navigate(['update-company'])
 
     }

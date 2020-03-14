@@ -18,11 +18,11 @@ export class ListStockPriceComponent implements OnInit {
     this.stockPrices=d;
     });
   }
-  // deleteStockPrice(stockPrice:StockPrice)
-  // {
-  //   this.stockService.deleteStockPrice(stockPrice.id).subscribe();
-  //   this.stockPrices=this.stockPrices.filter(c=>c!==stockPrice);
-  // }
+  deleteStockPrice(stockPrice:StockPrice)
+  {
+    this.stockService.deleteStockPrice(stockPrice.id).subscribe();
+    this.stockPrices=this.stockPrices.filter(c=>c!==stockPrice);
+  }
   updateStockPrice(stockPrice:StockPrice)
   {
     sessionStorage.removeItem('stockId');

@@ -1,5 +1,4 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import bsCustomFileInput from "bs-custom-file-input";
 import { StockPriceService } from '../services/stock-price.service';
 

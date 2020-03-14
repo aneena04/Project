@@ -31,4 +31,10 @@ export class StockPriceService {
     return this.httpclient.post<void>(this.httpUrl+"/uploadStocksSheet",formData);
   }
 
+
+  getCompanyStockPricesBetween(companyCode: string, stockExchange: string, startDate: Date, endDate: Date): Observable<any[]> {
+    let url = "/companyStockPriceBetween/"+companyCode+"/"+stockExchange+"/"+startDate+"/"+endDate;
+    return this.httpclient.get<any[]>(this.httpUrl+url);
+  }
+
 }
